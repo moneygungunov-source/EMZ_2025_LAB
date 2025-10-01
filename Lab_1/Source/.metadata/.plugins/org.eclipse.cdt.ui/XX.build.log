@@ -1,0 +1,27 @@
+12:48:26 **** Incremental Build of configuration Debug for project XX ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:91:10: warning: "/*" within comment [-Wcomment]
+   91 |          /*HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, ButtonState);
+      |           
+../Core/Src/main.c:92:3: warning: "/*" within comment [-Wcomment]
+   92 |   /* USER CODE END 2 */
+      |    
+../Core/Src/main.c:68:6: warning: unused variable 'ButtonState' [-Wunused-variable]
+   68 | char ButtonState;
+      |      ^~~~~~~~~~~
+arm-none-eabi-gcc -o "XX.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\students\Desktop\EMZ 2025\X\EMZ_2025_LAB\Lab_1\Source\XX\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="XX.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: XX.elf
+ 
+arm-none-eabi-size  XX.elf 
+arm-none-eabi-objdump -h -S XX.elf  > "XX.list"
+   text	   data	    bss	    dec	    hex	filename
+   6056	     12	   1572	   7640	   1dd8	XX.elf
+Finished building: default.size.stdout
+ 
+Finished building: XX.list
+ 
+
+12:48:27 Build Finished. 0 errors, 3 warnings. (took 816ms)
+
