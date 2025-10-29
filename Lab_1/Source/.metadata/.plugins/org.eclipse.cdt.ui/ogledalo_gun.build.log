@@ -1,0 +1,16 @@
+12:41:49 **** Incremental Build of configuration Debug for project ogledalo_gun ****
+make -j4 all 
+arm-none-eabi-gcc -o "ogledalo_gun.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\students\Desktop\EMZ 2025\moneygungunov\EMZ_2025_LAB\Lab_1\Source\ogledalo_gun\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ogledalo_gun.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ogledalo_gun.elf
+ 
+arm-none-eabi-size  ogledalo_gun.elf 
+arm-none-eabi-objdump -h -S ogledalo_gun.elf  > "ogledalo_gun.list"
+   text	   data	    bss	    dec	    hex	filename
+  15360	    124	   2084	  17568	   44a0	ogledalo_gun.elf
+Finished building: default.size.stdout
+ 
+Finished building: ogledalo_gun.list
+ 
+
+12:41:49 Build Finished. 0 errors, 0 warnings. (took 716ms)
+
