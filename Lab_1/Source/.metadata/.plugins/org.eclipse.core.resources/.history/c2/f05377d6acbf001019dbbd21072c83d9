@@ -123,61 +123,30 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
+  {
+
+    /* -- Sample board code for User push-button in interrupt mode ---- */
+    if (BspButtonState == BUTTON_PRESSED)
     {
-
-  	  int buttonstate1=0;
-  	  int buttonstate2=0;
-
-
-
-
-
-  	  buttonstate1=HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_9);
-  	  buttonstate2=HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_9);
-
-      /* -- Sample board code for User push-button in interrupt mode ---- */
-      if (buttonstate1 == 0)
-      {
-
-       HAL_GPIO_WritePin(GPIOC, GPIO_PIN_8, 1);
-       HAL_GPIO_WritePin(GPIOC, GPIO_PIN_6, 0);
+      /* Update button state */
+    	BspButtonState = BUTTON_RELEASED;
+    	HAL_Delay(690);
+    	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5,1);
+      HAL_GPIO_WritePin(GPIOC, GPIO_PIN_8,1);
+      HAL_Delay(690);
+      HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5,0);
+      HAL_GPIO_WritePin(GPIOC, GPIO_PIN_8,0);
+      /* -- Sample board code to toggle led ---- */
 
 
-        /* ..... Perform your action ..... */
-      }
+      /* ..... Perform your action ..... */
+    }
 
-
-      if (buttonstate2 == 0)
-          {
-
-           HAL_GPIO_WritePin(GPIOC, GPIO_PIN_6, 1);
-           HAL_GPIO_WritePin(GPIOC, GPIO_PIN_8, 0);
-
-
-            /* ..... Perform your action ..... */
-          }
-
-
-      if (buttonstate2==1 && buttonstate1==1)
-             {
-
-              HAL_GPIO_WritePin(GPIOC, GPIO_PIN_6, 0);
-              HAL_GPIO_WritePin(GPIOC, GPIO_PIN_8, 0);
-
-
-               /* ..... Perform your action ..... */
-             }
-
-
-      if (buttonstate2==0 && buttonstate1==0)
-                {
-
-                 HAL_GPIO_WritePin(GPIOC, GPIO_PIN_6, 0);
-                 HAL_GPIO_WritePin(GPIOC, GPIO_PIN_8, 0);
-
-
-                  /* ..... Perform your action ..... */
-                }
+    	else
+    	{
+    		 HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5,0);
+    		 HAL_GPIO_WritePin(GPIOC, GPIO_PIN_8,0);
+    	}
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
