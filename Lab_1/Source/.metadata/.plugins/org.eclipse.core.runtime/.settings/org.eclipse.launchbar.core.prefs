@@ -1,7 +1,14 @@
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=win32
-configDescList=org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:XX Debug
+configDescList=org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:upr 1 Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:cookie Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Lab1 Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:mirror Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:ogledalo_gun Debug
 eclipse.preferences.version=1
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Lab1\ Debug/activeLaunchMode=run
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Lab1\ Debug/activeLaunchTarget=null\:---
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:XX\ Debug/activeLaunchMode=run
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:XX\ Debug/activeLaunchTarget=null\:---
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:cookie\ Debug/activeLaunchMode=run
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:cookie\ Debug/activeLaunchTarget=null\:---
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:ogledalo_gun\ Debug/activeLaunchMode=run
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:ogledalo_gun\ Debug/activeLaunchTarget=null\:---
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:upr\ 1\ Debug/activeLaunchMode=run

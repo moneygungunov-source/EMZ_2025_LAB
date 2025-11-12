@@ -1,0 +1,10 @@
+15:59:47 **** Incremental Build of configuration Debug for project cookie ****
+make -j4 all 
+arm-none-eabi-size  cookie.elf 
+   text	   data	    bss	    dec	    hex	filename
+  55424	     96	  16984	  72504	  11b38	cookie.elf
+Finished building: default.size.stdout
+ 
+
+15:59:48 Build Finished. 0 errors, 0 warnings. (took 404ms)
+
