@@ -60,8 +60,8 @@ all: main-build
 main-build: XX.elf secondary-outputs
 
 # Tool invocations
-XX.elf XX.map: $(OBJS) $(USER_OBJS) C:\Users\students\Desktop\EMZ\ 2025\X\EMZ_2025_LAB\Lab_1\Source\XX\STM32G474RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "XX.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\students\Desktop\EMZ 2025\X\EMZ_2025_LAB\Lab_1\Source\XX\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="XX.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+XX.elf XX.map: $(OBJS) $(USER_OBJS) C:\Users\students\Desktop\EMZ\ 2025\moneygungunov\EMZ_2025_LAB\Lab_1\Source\XX\STM32G474RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "XX.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\students\Desktop\EMZ 2025\moneygungunov\EMZ_2025_LAB\Lab_1\Source\XX\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="XX.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

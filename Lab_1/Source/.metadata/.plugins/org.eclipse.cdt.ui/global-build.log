@@ -154,3 +154,204 @@ Finished building: default.size.stdout
  
 Finished building: ogledalo_gun.list
  
+12:41:06 **** Incremental Build of configuration Debug for project ogledalo_gun ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32G4xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:127:11: error: 'buttonstate' undeclared (first use in this function); did you mean 'BspButtonState'?
+  127 |           buttonstate =HAL_GPIO_ReadPin(user_button_GPIO_Port, user_button_Pin);
+      |           ^~~~~~~~~~~
+      |           BspButtonState
+../Core/Src/main.c:127:11: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:127:41: error: 'user_button_GPIO_Port' undeclared (first use in this function); did you mean 'USER_BUTTON_GPIO_PORT'?
+  127 |           buttonstate =HAL_GPIO_ReadPin(user_button_GPIO_Port, user_button_Pin);
+      |                                         ^~~~~~~~~~~~~~~~~~~~~
+      |                                         USER_BUTTON_GPIO_PORT
+../Core/Src/main.c:127:64: error: 'user_button_Pin' undeclared (first use in this function)
+  127 |           buttonstate =HAL_GPIO_ReadPin(user_button_GPIO_Port, user_button_Pin);
+      |                                                                ^~~~~~~~~~~~~~~
+../Core/Src/main.c:136:29: error: 'green_led_GPIO_Port' undeclared (first use in this function)
+  136 |           HAL_GPIO_WritePin(green_led_GPIO_Port, green_led_Pin,1);
+      |                             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:136:50: error: 'green_led_Pin' undeclared (first use in this function)
+  136 |           HAL_GPIO_WritePin(green_led_GPIO_Port, green_led_Pin,1);
+      |                                                  ^~~~~~~~~~~~~
+../Core/Src/main.c:263:13: error: invalid storage class for function 'MX_GPIO_Init'
+  263 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:331:1: error: expected declaration or statement at end of input
+  331 | }
+      | ^
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:53:13: warning: 'MX_GPIO_Init' used but never defined
+   53 | static void MX_GPIO_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:322:6: warning: 'Error_Handler' defined but not used [-Wunused-function]
+  322 | void Error_Handler(void)
+      |      ^~~~~~~~~~~~~
+../Core/Src/main.c:310:6: warning: 'BSP_PB_Callback' defined but not used [-Wunused-function]
+  310 | void BSP_PB_Callback(Button_TypeDef Button)
+      |      ^~~~~~~~~~~~~~~
+../Core/Src/main.c:263:13: warning: 'MX_GPIO_Init' defined but not used [-Wunused-function]
+  263 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:216:6: warning: 'SystemClock_Config' defined but not used [-Wunused-function]
+  216 | void SystemClock_Config(void)
+      |      ^~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+12:44:46 **** Incremental Build of configuration Debug for project ogledalo_gun ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32G4xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:132:11: error: 'buttonstate' undeclared (first use in this function); did you mean 'buttonstate2'?
+  132 |           buttonstate =HAL_GPIO_ReadPin(user_button_GPIO_Port, user_button_Pin);
+      |           ^~~~~~~~~~~
+      |           buttonstate2
+../Core/Src/main.c:132:11: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:132:41: error: 'user_button_GPIO_Port' undeclared (first use in this function); did you mean 'USER_BUTTON_GPIO_PORT'?
+  132 |           buttonstate =HAL_GPIO_ReadPin(user_button_GPIO_Port, user_button_Pin);
+      |                                         ^~~~~~~~~~~~~~~~~~~~~
+      |                                         USER_BUTTON_GPIO_PORT
+../Core/Src/main.c:132:64: error: 'user_button_Pin' undeclared (first use in this function)
+  132 |           buttonstate =HAL_GPIO_ReadPin(user_button_GPIO_Port, user_button_Pin);
+      |                                                                ^~~~~~~~~~~~~~~
+../Core/Src/main.c:190:29: error: 'green_led_GPIO_Port' undeclared (first use in this function)
+  190 |           HAL_GPIO_WritePin(green_led_GPIO_Port, green_led_Pin,1);
+      |                             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:190:50: error: 'green_led_Pin' undeclared (first use in this function)
+  190 |           HAL_GPIO_WritePin(green_led_GPIO_Port, green_led_Pin,1);
+      |                                                  ^~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+12:51:39 **** Incremental Build of configuration Debug for project ogledalo_gun ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32G4xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "ogledalo_gun.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\students\Desktop\EMZ 2025\moneygungunov\EMZ_2025_LAB\Lab_1\Source\ogledalo_gun\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ogledalo_gun.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ogledalo_gun.elf
+ 
+arm-none-eabi-size  ogledalo_gun.elf 
+arm-none-eabi-objdump -h -S ogledalo_gun.elf  > "ogledalo_gun.list"
+   text	   data	    bss	    dec	    hex	filename
+  15528	    124	   2084	  17736	   4548	ogledalo_gun.elf
+Finished building: default.size.stdout
+ 
+Finished building: ogledalo_gun.list
+ 
+12:53:30 **** Incremental Build of configuration Debug for project ogledalo_gun ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32G4xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "ogledalo_gun.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\students\Desktop\EMZ 2025\moneygungunov\EMZ_2025_LAB\Lab_1\Source\ogledalo_gun\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ogledalo_gun.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ogledalo_gun.elf
+ 
+arm-none-eabi-size  ogledalo_gun.elf 
+arm-none-eabi-objdump -h -S ogledalo_gun.elf  > "ogledalo_gun.list"
+   text	   data	    bss	    dec	    hex	filename
+  15560	    124	   2084	  17768	   4568	ogledalo_gun.elf
+Finished building: default.size.stdout
+ 
+Finished building: ogledalo_gun.list
+ 
+12:55:23 **** Incremental Build of configuration Debug for project ogledalo_gun ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32G4xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "ogledalo_gun.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\students\Desktop\EMZ 2025\moneygungunov\EMZ_2025_LAB\Lab_1\Source\ogledalo_gun\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ogledalo_gun.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ogledalo_gun.elf
+ 
+arm-none-eabi-size  ogledalo_gun.elf 
+arm-none-eabi-objdump -h -S ogledalo_gun.elf  > "ogledalo_gun.list"
+   text	   data	    bss	    dec	    hex	filename
+  15560	    124	   2084	  17768	   4568	ogledalo_gun.elf
+Finished building: default.size.stdout
+ 
+Finished building: ogledalo_gun.list
+ 
+12:56:03 **** Incremental Build of configuration Debug for project ogledalo_gun ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32G4xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:130:17: error: expected '=', ',', ';', 'asm' or '__attribute__' before '!=' token
+  130 | int buttonstate5!=0;
+      |                 ^~
+../Core/Src/main.c:130:17: error: expected expression before '!=' token
+../Core/Src/main.c:141:10: error: 'buttonstate5' undeclared (first use in this function); did you mean 'buttonstate2'?
+  141 |          buttonstate5=HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_13);
+      |          ^~~~~~~~~~~~
+      |          buttonstate2
+../Core/Src/main.c:141:10: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+12:57:24 **** Incremental Build of configuration Debug for project ogledalo_gun ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32G4xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "ogledalo_gun.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\students\Desktop\EMZ 2025\moneygungunov\EMZ_2025_LAB\Lab_1\Source\ogledalo_gun\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ogledalo_gun.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ogledalo_gun.elf
+ 
+arm-none-eabi-size  ogledalo_gun.elf 
+arm-none-eabi-objdump -h -S ogledalo_gun.elf  > "ogledalo_gun.list"
+   text	   data	    bss	    dec	    hex	filename
+  15560	    124	   2084	  17768	   4568	ogledalo_gun.elf
+Finished building: default.size.stdout
+ 
+Finished building: ogledalo_gun.list
+ 
+12:57:46 **** Incremental Build of configuration Debug for project ogledalo_gun ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32G4xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "ogledalo_gun.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\students\Desktop\EMZ 2025\moneygungunov\EMZ_2025_LAB\Lab_1\Source\ogledalo_gun\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ogledalo_gun.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ogledalo_gun.elf
+ 
+arm-none-eabi-size  ogledalo_gun.elf 
+arm-none-eabi-objdump -h -S ogledalo_gun.elf  > "ogledalo_gun.list"
+   text	   data	    bss	    dec	    hex	filename
+  15560	    124	   2084	  17768	   4568	ogledalo_gun.elf
+Finished building: default.size.stdout
+ 
+Finished building: ogledalo_gun.list
+ 
+13:02:03 **** Incremental Build of configuration Debug for project ogledalo_gun ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32G4xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:144:13: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  144 |         if (buttonstate5 =! 0)
+      |             ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "ogledalo_gun.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\students\Desktop\EMZ 2025\moneygungunov\EMZ_2025_LAB\Lab_1\Source\ogledalo_gun\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ogledalo_gun.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ogledalo_gun.elf
+ 
+arm-none-eabi-size  ogledalo_gun.elf 
+arm-none-eabi-objdump -h -S ogledalo_gun.elf  > "ogledalo_gun.list"
+   text	   data	    bss	    dec	    hex	filename
+  15560	    124	   2084	  17768	   4568	ogledalo_gun.elf
+Finished building: default.size.stdout
+ 
+Finished building: ogledalo_gun.list
+ 
+13:02:42 **** Incremental Build of configuration Debug for project ogledalo_gun ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32G4xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "ogledalo_gun.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\students\Desktop\EMZ 2025\moneygungunov\EMZ_2025_LAB\Lab_1\Source\ogledalo_gun\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ogledalo_gun.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ogledalo_gun.elf
+ 
+arm-none-eabi-size  ogledalo_gun.elf 
+arm-none-eabi-objdump -h -S ogledalo_gun.elf  > "ogledalo_gun.list"
+   text	   data	    bss	    dec	    hex	filename
+  15560	    124	   2084	  17768	   4568	ogledalo_gun.elf
+Finished building: default.size.stdout
+ 
+Finished building: ogledalo_gun.list
+ 
+13:03:46 **** Incremental Build of configuration Debug for project ogledalo_gun ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_NUCLEO_64 -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/BSP/STM32G4xx_Nucleo -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "ogledalo_gun.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\students\Desktop\EMZ 2025\moneygungunov\EMZ_2025_LAB\Lab_1\Source\ogledalo_gun\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ogledalo_gun.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ogledalo_gun.elf
+ 
+arm-none-eabi-size  ogledalo_gun.elf 
+arm-none-eabi-objdump -h -S ogledalo_gun.elf  > "ogledalo_gun.list"
+   text	   data	    bss	    dec	    hex	filename
+  15560	    124	   2084	  17768	   4568	ogledalo_gun.elf
+Finished building: default.size.stdout
+ 
+Finished building: ogledalo_gun.list
+ 

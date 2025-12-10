@@ -120,30 +120,62 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   int buttonstate=0;
   while (1)
-  {
-	  buttonstate =HAL_GPIO_ReadPin(user_button_GPIO_Port, user_button_Pin);
-    /* -- Sample board code for User push-button in interrupt mode ---- */
-    if (buttonstate == BUTTON_PRESSED)
+   {
 
-    {
-      /* Update button state */
-      BspButtonState = BUTTON_RELEASED;
-      /* -- Sample board code to toggle led ---- */
-	  HAL_Delay(550);
-	  HAL_GPIO_WritePin(green_led_GPIO_Port, green_led_Pin,1);
-	  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_8,1);
-	  HAL_Delay(550);
-	  HAL_GPIO_WritePin(green_led_GPIO_Port, green_led_Pin,0);
-	  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_8,0);
+ 	  int buttonstate1=0;
+ 	  int buttonstate2=0;
 
-      /* ..... Perform your action ..... */
-    }
-    else
-    {
-    	  HAL_GPIO_WritePin(green_led_GPIO_Port, green_led_Pin,0);
-    	  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_8,0);
 
-    }
+
+
+
+ 	  buttonstate1=HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_9);
+ 	  buttonstate2=HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_9);
+
+     /* -- Sample board code for User push-button in interrupt mode ---- */
+     if (buttonstate1 == 0)
+     {
+
+      HAL_GPIO_WritePin(GPIOC, GPIO_PIN_8, 1);
+      HAL_GPIO_WritePin(GPIOC, GPIO_PIN_6, 0);
+
+
+       /* ..... Perform your action ..... */
+     }
+
+
+     if (buttonstate2 == 0)
+         {
+
+          HAL_GPIO_WritePin(GPIOC, GPIO_PIN_6, 1);
+          HAL_GPIO_WritePin(GPIOC, GPIO_PIN_8, 0);
+
+
+           /* ..... Perform your action ..... */
+         }
+
+
+     if (buttonstate2==1 && buttonstate1==1)
+            {
+
+             HAL_GPIO_WritePin(GPIOC, GPIO_PIN_6, 0);
+             HAL_GPIO_WritePin(GPIOC, GPIO_PIN_8, 0);
+
+
+              /* ..... Perform your action ..... */
+            }
+
+
+     if (buttonstate2==0 && buttonstate1==0)
+               {
+
+                HAL_GPIO_WritePin(GPIOC, GPIO_PIN_6, 0);
+                HAL_GPIO_WritePin(GPIOC, GPIO_PIN_8, 0);
+
+
+                 /* ..... Perform your action ..... */
+               }
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -216,6 +248,18 @@ static void MX_GPIO_Init(void)
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOC, GPIO_PIN_6|GPIO_PIN_8, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin : PC13 */
+  GPIO_InitStruct.Pin = GPIO_PIN_13;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : PA5 */
+  GPIO_InitStruct.Pin = GPIO_PIN_5;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
   /*Configure GPIO pins : PC6 PC8 */
   GPIO_InitStruct.Pin = GPIO_PIN_6|GPIO_PIN_8;

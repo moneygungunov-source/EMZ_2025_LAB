@@ -123,19 +123,37 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
-    {
+  {
 
   	  int buttonstate1=0;
   	  int buttonstate2=0;
+int buttonstate5=0;
 
 
-
+    /* -- Sample board code for User push-button in interrupt mode ---- */
 
 
   	  buttonstate1=HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_9);
   	  buttonstate2=HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_9);
 
+
+
+  	 buttonstate5=HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_13);
       /* -- Sample board code for User push-button in interrupt mode ---- */
+
+  	if (buttonstate5 == 1)
+  	      {
+
+  	       HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, 1);
+  	       HAL_Delay(550);
+  	     HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, 0);
+  	   HAL_Delay(550);
+  	        /* ..... Perform your action ..... */
+  	      }
+
+
+
+
       if (buttonstate1 == 0)
       {
 
@@ -161,11 +179,10 @@ int main(void)
       if (buttonstate2==1 && buttonstate1==1)
              {
 
-              HAL_GPIO_WritePin(GPIOC, GPIO_PIN_6, 0);
-              HAL_GPIO_WritePin(GPIOC, GPIO_PIN_8, 0);
+          HAL_GPIO_WritePin(GPIOC, GPIO_PIN_6, 0);
+             HAL_GPIO_WritePin(GPIOC, GPIO_PIN_8, 0);
 
-
-               /* ..... Perform your action ..... */
+            /* ..... Perform your action ..... */
              }
 
 
@@ -249,19 +266,29 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOC, GPIO_PIN_6|GPIO_PIN_8, GPIO_PIN_RESET);
+
+  /*Configure GPIO pins : PC13 PC9 */
+  GPIO_InitStruct.Pin = GPIO_PIN_13|GPIO_PIN_9;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : PA5 */
+  GPIO_InitStruct.Pin = GPIO_PIN_5;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
   /*Configure GPIO pins : PC6 PC8 */
   GPIO_InitStruct.Pin = GPIO_PIN_6|GPIO_PIN_8;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
-
-  /*Configure GPIO pin : PC9 */
-  GPIO_InitStruct.Pin = GPIO_PIN_9;
-  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-  GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
   /*Configure GPIO pin : PB9 */
